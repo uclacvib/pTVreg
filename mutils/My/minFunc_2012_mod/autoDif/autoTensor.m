@@ -45,7 +45,7 @@ else % Use finite differencing
     for j = 1:p
         e_j = zeros(p,1);
         e_j(j) = 1;
-        [~ ~ diff(:,:,j)] = funObj(x + mu*e_j,varargin{:});
+        [junk1 junk2 diff(:,:,j)] = funObj(x + mu*e_j,varargin{:});
     end
     T = (diff-repmat(H,[1 1 p]))/mu;
 end

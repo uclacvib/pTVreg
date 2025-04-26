@@ -41,7 +41,7 @@ function [err, g, perr] = metric_ngf(imfix, imdef, spc, cache)
                my_gradient(tmp3, spc, 3, gt);
         g = g * (-dvol);
 %         imagesc(g(:,:, round(end/2)));  colorbar; pause(0.1);
-   elseif Nd = 2;
+   elseif Nd == 2;
        if ~isempty(cache)
             gf1 = cache.gf1;
             gf2 = cache.gf2;
